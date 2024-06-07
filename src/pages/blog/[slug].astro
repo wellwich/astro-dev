@@ -1,0 +1,27 @@
+---
+import { getCollection } from "astro:content";
+import BlogLayout from "../../layouts/BlogLayout.astro";
+import type { BlogPost } from "../../types/blog";
+
+const { slug } = Astro.params;
+const rawPosts = await getCollection("posts");
+const posts: BlogPost[] = rawPosts.map((post) => ({
+    title: post.data.title,
+    date: post.data.date,
+    description: post.data.description,
+    slug: post.slug,
+    tags: post.data.tags,
+    content: post.body,
+}));
+const post = posts.find((p) => p.slug === slug);
+
+if (!post) {
+    throw new Error(`Post not found: ${slug}`);
+}
+---
+
+<BlogLayout>
+    <h1 class="text-4xl font-bold mb-4">{post.title}</h1>
+    <time class="block text-gray-600 mb-4">{post.date}</time>
+    <div class="prose">{post.content}</div>
+</BlogLayout>

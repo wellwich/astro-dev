@@ -1,0 +1,17 @@
+---
+import type { BlogPost } from "../types/blog";
+
+const { tags } = Astro.props as BlogPost;
+---
+
+<ul class="flex space-x-2">
+    {
+        tags.map((tag) => (
+            <li class="bg-gray-200 px-2 py-1 rounded">
+                <a href={`/tags/${tag}`} class="text-blue-600 hover:underline">
+                    #{tag}
+                </a>
+            </li>
+        ))
+    }
+</ul>
