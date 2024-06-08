@@ -4,6 +4,7 @@ import BlogLayout from "../../../layouts/BlogLayout.astro";
 import BlogPost from "../../../components/BlogPost.astro";
 import type { GetStaticPathsOptions, Page } from "astro";
 import { getAllTags, parseTags, getBlogs } from "../../../utils/blog";
+import Pagination from "../../../components/Pagination.astro";
 
 export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
     const posts = await getBlogs();
@@ -36,6 +37,7 @@ const { page } = Astro.props as {
 page.data.sort((a, b) =>
     new Date(a.data.date) > new Date(b.data.date) ? -1 : 1,
 );
+const currentPageNumber = parseInt(page.url.current.match(/\d+/)?.[0] ?? "1");
 ---
 
 <BlogLayout title={tag}>
@@ -51,4 +53,9 @@ page.data.sort((a, b) =>
             />
         ))
     }
+    <Pagination
+        prev={page.url.prev}
+        current={currentPageNumber}
+        next={page.url.next}
+    />
 </BlogLayout>
