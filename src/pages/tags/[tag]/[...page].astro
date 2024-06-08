@@ -37,7 +37,14 @@ const { page } = Astro.props as {
 page.data.sort((a, b) =>
     new Date(a.data.date) > new Date(b.data.date) ? -1 : 1,
 );
-const currentPageNumber = parseInt(page.url.current.match(/\d+/)?.[0] ?? "1");
+let currentPageNumber;
+if (page.url.current === "/tags/" + tag) {
+    currentPageNumber = 1;
+} else {
+    currentPageNumber = parseInt(
+        page.url.current.match(/(\d+)(?!.*\d)/)?.[0] ?? "1",
+    );
+}
 ---
 
 <BlogLayout title={tag}>
