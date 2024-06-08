@@ -1,0 +1,13 @@
+---
+import type { BlogPostType } from "../blog";
+import TagList from "./TagList.astro";
+import Time from "./Time.astro";
+
+const { title, date, tags } = Astro.props as BlogPostType;
+---
+
+<article>
+    <h1>{title}</h1>
+    <Time date={date} />
+    <TagList tags={tags} />
+</article>

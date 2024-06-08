@@ -1,12 +1,12 @@
 ---
+import { getBlogs, getAllTags } from "../utils/blog";
+import TagList from "./TagList.astro";
+const posts = await getBlogs();
+const tags = getAllTags(posts);
 // Sidebar.astro
 ---
 
-<aside class="mb-8 p-4 border rounded-lg min-w-max">
-    <h2 class="text-xl font-bold mb-4">サイドバー</h2>
-    <ul>
-        <li><a href="#">リンク1</a></li>
-        <li><a href="#">リンク2</a></li>
-        <li><a href="#">リンク3</a></li>
-    </ul>
+<aside class="mb-8 p-4 border rounded-lg">
+    <h2 class="text-xl font-bold mb-4">Tags</h2>
+    <TagList tags={tags} />
 </aside>

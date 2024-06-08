@@ -1,0 +1,6 @@
+---
+import type { BlogPostType } from "../blog";
+const { date } = Astro.props as BlogPostType;
+---
+
+<time class="block text-gray-600 mb-2">{date}</time>

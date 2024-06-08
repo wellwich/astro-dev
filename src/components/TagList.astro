@@ -1,13 +1,13 @@
 ---
-import type { BlogPost } from "../types/blog";
+import type { BlogPostType } from "../blog";
 
-const { tags } = Astro.props as BlogPost;
+const { tags } = Astro.props as BlogPostType;
 ---
 
-<ul class="flex space-x-2">
+<ul class="tag">
     {
         tags.map((tag) => (
-            <li class="bg-gray-200 px-2 py-1 rounded">
+            <li class="bg-gray-200 px-2 py-1 rounded m-1 inline-block">
                 <a href={`/tags/${tag}`} class="text-blue-600 hover:underline">
                     #{tag}
                 </a>

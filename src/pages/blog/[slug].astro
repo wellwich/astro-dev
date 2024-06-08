@@ -1,27 +1,33 @@
 ---
-import { getCollection } from "astro:content";
+import { getCollection, type CollectionEntry } from "astro:content";
 import BlogLayout from "../../layouts/BlogLayout.astro";
-import type { BlogPost } from "../../types/blog";
+import BlogMeta from "../../components/BlogMeta.astro";
+import "../../styles/global.css";
 
-const { slug } = Astro.params;
-const rawPosts = await getCollection("posts");
-const posts: BlogPost[] = rawPosts.map((post) => ({
-    title: post.data.title,
-    date: post.data.date,
-    description: post.data.description,
-    slug: post.slug,
-    tags: post.data.tags,
-    content: post.body,
-}));
-const post = posts.find((p) => p.slug === slug);
-
-if (!post) {
-    throw new Error(`Post not found: ${slug}`);
+export async function getStaticPaths({}) {
+    const posts = await getCollection("posts");
+    return posts.map((post) => ({
+        params: { slug: post.slug },
+        props: { post },
+    }));
 }
+
+export const prerender = true;
+
+interface Props {
+    post: CollectionEntry<"posts">;
+}
+const { post } = Astro.props;
+const { Content } = await post.render();
 ---
 
 <BlogLayout>
-    <h1 class="text-4xl font-bold mb-4">{post.title}</h1>
-    <time class="block text-gray-600 mb-4">{post.date}</time>
-    <div class="prose">{post.content}</div>
+    <div class="markdown">
+        <BlogMeta
+            title={post.data.title}
+            date={post.data.date}
+            tags={post.data.tags}
+        />
+        <Content />
+    </div>
 </BlogLayout>

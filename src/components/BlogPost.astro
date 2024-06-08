@@ -1,15 +1,17 @@
 ---
-import type { BlogPost } from "../types/blog";
+import type { BlogPostType } from "../blog";
 import TagList from "./TagList.astro";
+import Time from "./Time.astro";
 
-const { title, date, description, slug, tags } = Astro.props as BlogPost;
+const { title, date, description, slug, tags } = Astro.props as BlogPostType;
 ---
 
-<article class="mb-8 p-4 border rounded-lg">
+<div class="mb-8 p-4 border rounded-lg">
     <h2 class="text-2xl font-bold"><a href={`/blog/${slug}`}>{title}</a></h2>
-    <time class="block text-gray-600 mb-2">{date}</time>
+    <Time date={date} />
     <p>{description}</p>
     <TagList tags={tags} />
-    <a href={`/blog/${slug}`} class="text-blue-600 hover:underline">Read more</a
-    >
-</article>
+    <a href={`/blog/${slug}`} class="text-blue-600 hover:underline flex">
+        続きを読む
+    </a>
+</div>

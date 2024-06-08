@@ -1,0 +1,54 @@
+---
+import type { CollectionEntry } from "astro:content";
+import BlogLayout from "../../../layouts/BlogLayout.astro";
+import BlogPost from "../../../components/BlogPost.astro";
+import type { GetStaticPathsOptions, Page } from "astro";
+import { getAllTags, parseTags, getBlogs } from "../../../utils/blog";
+
+export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
+    const posts = await getBlogs();
+    const tags = getAllTags(posts);
+
+    return tags
+        .map((tag) =>
+            paginate(
+                posts.filter((post) =>
+                    parseTags(post.data.tags).some(
+                        (current) => current === tag,
+                    ),
+                ),
+                {
+                    params: { tag },
+                    pageSize: 5,
+                },
+            ),
+        )
+        .flat();
+}
+
+const { tag } = Astro.params;
+
+export const prerender = true;
+
+const { page } = Astro.props as {
+    page: Page<CollectionEntry<"posts">>;
+};
+page.data.sort((a, b) =>
+    new Date(a.data.date) > new Date(b.data.date) ? -1 : 1,
+);
+---
+
+<BlogLayout title={tag}>
+    <h1 class="text-4xl font-bold mb-8">Posts tagged with #{tag}</h1>
+    {
+        page.data.map((post) => (
+            <BlogPost
+                slug={post.slug}
+                title={post.data.title}
+                date={post.data.date}
+                description={post.data.description}
+                tags={post.data.tags}
+            />
+        ))
+    }
+</BlogLayout>
