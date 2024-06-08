@@ -12,6 +12,6 @@ export default defineConfig({
       enabled: true
     }
   }),
-  site: "https://wellwich.com",
+  site: "https://dev.wellwich.com",
   integrations: [tailwind(), sitemap()]
 });
