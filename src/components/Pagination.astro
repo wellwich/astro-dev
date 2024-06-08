@@ -1,0 +1,37 @@
+---
+type Props = {
+    prev?: string;
+    prevText?: string;
+    next?: string;
+    nextText?: string;
+    current?: number;
+};
+
+const {
+    prev,
+    prevText = "Back",
+    next,
+    nextText = "Next Page",
+    current,
+} = Astro.props as Props;
+---
+
+<div class="flex justify-between">
+    {
+        prev ? (
+            <a href={prev} class="flex items-center text-blue-600">
+                {prevText}
+            </a>
+        ) : (
+            <div />
+        )
+    }
+    {current && <span class="text-gray-500 mx-auto">{current}</span>}
+    {
+        next && (
+            <a href={next} class="flex items-center text-blue-600">
+                {nextText}
+            </a>
+        )
+    }
+</div>

@@ -3,6 +3,7 @@ import { getCollection, type CollectionEntry } from "astro:content";
 import BlogLayout from "../../layouts/BlogLayout.astro";
 import BlogPost from "../../components/BlogPost.astro";
 import type { GetStaticPathsOptions, Page } from "astro";
+import Pagination from "../../components/Pagination.astro";
 
 export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
     // v1: return paginate(await Astro.glob("../pages/blog/*.mdx"), { pageSize: 20 });
@@ -17,6 +18,7 @@ const { page } = Astro.props as {
 page.data.sort((a, b) =>
     new Date(a.data.date) > new Date(b.data.date) ? -1 : 1,
 );
+const currentPageNumber = parseInt(page.url.current.match(/\d+/)?.[0] ?? "1");
 ---
 
 <BlogLayout>
@@ -31,4 +33,9 @@ page.data.sort((a, b) =>
             />
         ))
     }
+    <Pagination
+        prev={page.url.prev}
+        current={currentPageNumber}
+        next={page.url.next}
+    />
 </BlogLayout>
