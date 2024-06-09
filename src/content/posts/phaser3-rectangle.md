@@ -2,7 +2,7 @@
 title: "矩形 - Phaser3 Tips"
 date: "2024-06-01"
 description: "Phaser3で矩形を生成する方法を紹介します。"
-tags: ["Phaser3"]
+tags: ["Phaser3","Phaser3 Tips"]
 ---
 
 ## 矩形

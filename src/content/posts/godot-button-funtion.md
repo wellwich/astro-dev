@@ -1,8 +1,8 @@
 ---
-title: "Godotのボタンノードで任意の処理を実行する方法"
+title: "Godotのボタンノードで任意の処理を実行する方法 - Godot Tips"
 date: "2024-06-07"
 description: "Godotのボタンノードで任意の処理を実行する方法を紹介します。"
-tags: ["Godot"]
+tags: ["Godot","Godot Tips"]
 ---
 
 &emsp;Godotのボタンノードで任意の処理を実行する方法を紹介します。Godot4.xの方法が日本語でまとまっている情報が少ないため、参考になれば幸いです。

@@ -2,7 +2,7 @@
 title: "タッチイベント - Phaser3 Tips"
 date: "2024-06-01"
 description: "ゲームオブジェクトにタッチイベントを追加する方法を紹介します。"
-tags: ["Phaser3"]
+tags: ["Phaser3","Phaser3 Tips"]
 ---
 
 ## ゲームオブジェクトのタッチイベント

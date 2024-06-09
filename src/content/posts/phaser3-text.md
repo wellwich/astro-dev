@@ -2,7 +2,7 @@
 title: "テキスト - Phaser3 Tips"
 description: "Phaser3でテキストを表示する方法を紹介します。"
 date: "2024-06-01"
-tags: ["Phaser3"]
+tags: ["Phaser3","Phaser3 Tips"]
 ---
 
 ## テキスト

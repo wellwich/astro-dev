@@ -2,7 +2,7 @@
 title: "ゲーム画面を強制的に横向きにする - Phaser3 Tips"
 date: "2024-06-01"
 description: "Phaser3で画面を強制的に横向きにする方法を紹介します。"
-tags: ["Phaser3"]
+tags: ["Phaser3","Phaser3 Tips"]
 ---
 画面を強制的に横向きにする方法を紹介します。
 

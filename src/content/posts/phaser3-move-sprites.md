@@ -2,7 +2,7 @@
 title: "スプライトを移動させる（TypeScriptの場合） - Phaser3 Tips"
 date: "2024-06-01"
 description: "スプライトを移動させる方法を紹介します。ここでは、TypeScriptを使用しています。"
-tags: ["Phaser3"]
+tags: ["Phaser3","Phaser3 Tips"]
 ---
 　スプライトを移動させる方法を紹介します。ここでは、TypeScriptを使用しています。
 

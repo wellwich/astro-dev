@@ -2,7 +2,7 @@
 title: "Phaser3をTypeScriptで使用する際の問題点と解決方法 - Phaser3 Tips"
 date: "2024-06-01"
 description: "Phaser3をTypeScriptで使用する際の問題点と解決方法を紹介します。"
-tags: ["Phaser3"]
+tags: ["Phaser3","Phaser3 Tips"]
 ---
 　Phaser3をTypeScriptで使用する際には、以下のような問題点があります。
 - 変数を宣言する際に、型を指定する必要がある

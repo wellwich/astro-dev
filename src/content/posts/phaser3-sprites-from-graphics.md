@@ -2,7 +2,7 @@
 title: "元画像なしでスプライトを生成する - Phaser3 Tips"
 date: "2024-06-01"
 description: "元画像なしでスプライトを生成する方法を紹介します。"
-tags: ["Phaser3"]
+tags: ["Phaser3","Phaser3 Tips"]
 ---
 　画像を用意せずにスプライトを生成する方法です。`Phaser.GameObjects.Graphics`を使用します。
 
