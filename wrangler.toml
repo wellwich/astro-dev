@@ -1,5 +1,5 @@
 #:schema node_modules/wrangler/config-schema.json
-name = "godot"
+name = "astro-dev"
 compatibility_date = "2024-06-05"
 pages_build_output_dir = "./dist"
 
