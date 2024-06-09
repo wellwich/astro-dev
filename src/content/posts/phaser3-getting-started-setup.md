@@ -1,5 +1,5 @@
 ---
-title: "Phaser3とViteでHello Worldするまでの環境を構築する方法"
+title: "Phaser3とViteでHello Worldするまでの環境を構築する方法 - Phaser3 Getting Started"
 date: "2024-06-01"
 description: "Phaser3とViteでHello Worldするまでの環境を構築する方法を説明します。"
 tags: ["Phaser3","Phaser3 Getting Started"]

@@ -1,3 +1,28 @@
 ---
-return Astro.redirect("/blog");
+import BlogLayout from "../layouts/BlogLayout.astro";
+import { getBlogs, sortByDate } from "../utils/blog";
+import BlogPost from "../components/BlogPost.astro";
+const posts = await getBlogs();
+// postsを日付順にソート
+const sortedPosts = sortByDate(posts);
+// 最新の5つの記事を取得
+const latestPosts = sortedPosts.slice(0, 5);
 ---
+
+<BlogLayout>
+    <h1 class="text-2xl font-bold mb-4">最新記事</h1>
+    <ul>
+        {
+            latestPosts.map((post) => (
+                <BlogPost
+                    title={post.data.title}
+                    date={post.data.date}
+                    description={post.data.description}
+                    slug={post.slug}
+                    tags={post.data.tags}
+                />
+            ))
+        }
+    </ul>
+    <a href="/blog" class="text-blue-500">もっと見る</a>
+</BlogLayout>

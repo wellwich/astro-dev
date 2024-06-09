@@ -1,5 +1,5 @@
 ---
-title: "Phaser3で作ったゲームを無料で公開する方法"
+title: "Phaser3で作ったゲームを無料で公開する方法 - Phaser3 Getting Started"
 date: "2024-06-01"
 description: "Phaser3で作ったゲームを無料で公開する方法を紹介します。"
 tags: ["Phaser3","Phaser3 Getting Started"]
