@@ -71,7 +71,7 @@ npm install phaser
 　`public`ディレクトリの`vite.svg`と`src`ディレクトリの`counter.ts`、`typescript.svg`、`vite-env.d.ts`は不要なので削除します。
 ## 5．main.tsを編集する
 　`main.ts`も最低限の設定で書いています。今回はテキストで「Hello world!」と表示するだけです。
-```TypeScript {name="src/main.ts"}
+```typescript {name="src/main.ts"}
 import Phaser from 'phaser';
 
 const DEFAULT_WIDTH = 640;
