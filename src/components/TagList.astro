@@ -2,6 +2,8 @@
 import type { BlogPostType } from "../blog";
 
 const { tags } = Astro.props as BlogPostType;
+// tagsをソート
+tags.sort((a, b) => a.localeCompare(b));
 ---
 
 <ul class="tag">
