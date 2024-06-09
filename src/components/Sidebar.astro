@@ -3,6 +3,8 @@ import { getBlogs, getAllTags } from "../utils/blog";
 import TagList from "./TagList.astro";
 const posts = await getBlogs();
 const tags = getAllTags(posts);
+// tagsをソート
+tags.sort((a, b) => a.localeCompare(b));
 // Sidebar.astro
 ---
 
