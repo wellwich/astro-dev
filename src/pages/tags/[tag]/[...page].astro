@@ -48,7 +48,7 @@ if (page.url.current === "/tags/" + tag) {
 ---
 
 <BlogLayout title={tag}>
-    <h1 class="text-4xl font-bold mb-8">Posts tagged with #{tag}</h1>
+    <h1 class="text-4xl font-bold mb-8">#{tag}　に関する記事</h1>
     {
         page.data.map((post) => (
             <BlogPost
