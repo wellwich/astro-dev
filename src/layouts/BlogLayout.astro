@@ -26,8 +26,10 @@ if (!description) {
         <link rel="icon" href="/favicon.ico?" type="image/x-icon" />
         <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"
         ></script>
-        <script>
+        <script is:inline>
             window.googletag = window.googletag || { cmd: [] };
+        </script>
+        <script>
             googletag.cmd.push(function () {
                 googletag
                     .defineSlot(
