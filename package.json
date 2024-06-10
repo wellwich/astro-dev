@@ -22,6 +22,7 @@
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20240605.0",
+    "@types/google-publisher-tag": "^1.20240219.0",
     "wrangler": "^3.59.0"
   }
 }
