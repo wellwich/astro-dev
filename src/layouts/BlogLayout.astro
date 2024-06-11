@@ -30,56 +30,68 @@ if (!description) {
         </script>
         <script is:inline>
             googletag.cmd.push(function () {
-                googletag
+                const headerSlot = googletag
                     .defineSlot(
-                        "/23167867665/dev_pc_article_header",
+                        "/23167867665/dev_all_header",
                         [
-                            [468, 60],
                             [728, 90],
-                        ],
-                        "div-gpt-ad-1718059060339-0",
-                    )
-                    .defineSlot(
-                        "/23167867665/dev_sp_article_header",
-                        [
                             [320, 50],
-                            [300, 250],
+                            [468, 60],
+                            [970, 90],
                         ],
-                        "div-gpt-ad-1718079383826-0",
+                        "div-gpt-ad-1718081104718-0",
                     )
                     .addService(googletag.pubads());
+                const mapping = googletag
+                    .sizeMapping()
+                    .addSize(
+                        [992, 744],
+                        [
+                            [970, 90],
+                            [728, 90],
+                        ],
+                    )
+                    .addSize([768, 576], [728, 90])
+                    .addSize(
+                        [517, 387],
+                        [
+                            [468, 60],
+                            [320, 50],
+                        ],
+                    )
+                    .addSize([0, 0], [320, 50])
+                    .build();
+
+                headerSlot.defineSizeMapping(mapping);
                 googletag.pubads().enableSingleRequest();
                 googletag.enableServices();
 
-                googletag.display("div-gpt-ad-1718059060339-0");
-                googletag.display("div-gpt-ad-1718079383826-0");
+                googletag.display("div-gpt-ad-1718081104718-0");
             });
         </script>
     </head>
     <body class="bg-gray-100 text-gray-900">
         <Header />
-        <!-- /23167867665/dev_pc_article_header -->
+        <!-- /23167867665/dev_all_header -->
         <div
-            id="div-gpt-ad-1718059060339-0"
-            style="min-width: 468px; min-height: 60px;"
-            class="ads pc mt-4 hidden md:block"
+            id="div-gpt-ad-1718081104718-0"
+            style="min-width: 320px; min-height: 50px;"
+            class="ads"
         >
+            <script>
+                googletag.cmd.push(function () {
+                    googletag.display("div-gpt-ad-1718081104718-0");
+                });
+            </script>
         </div>
-        <!-- /23167867665/dev_sp_article_header -->
-        <div
-            id="div-gpt-ad-1718079383826-0"
-            style="min-width: 300px; min-height: 50px;"
-            class="ads sp block md:hidden"
-        >
-        </div>
-        <div class="flex flex-col md:flex-row max-w-6xl mx-auto w-full">
-            <main class="p-4 md:w-3/5">
-                <slot />
-            </main>
-            <div class="p-4 md:w-2/5">
-                <Sidebar />
-            </div>
-        </div>
-        <Footer />
     </body>
+    <div class="flex flex-col md:flex-row max-w-6xl mx-auto w-full">
+        <main class="p-4 md:w-3/5">
+            <slot />
+        </main>
+        <div class="p-4 md:w-2/5">
+            <Sidebar />
+        </div>
+    </div>
+    <Footer />
 </html>
