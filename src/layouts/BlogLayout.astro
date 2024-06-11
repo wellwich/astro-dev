@@ -66,13 +66,17 @@ if (!description) {
                 const sidebarSlot = googletag
                     .defineSlot(
                         "/23167867665/dev_all_sidebar",
-                        [160, 600],
-                        "div-gpt-ad-1718103576790-0",
+                        [
+                            [160, 600],
+                            [300, 250],
+                        ],
+                        "div-gpt-ad-1718104133960-0",
                     )
                     .addService(googletag.pubads());
                 const sidebarMapping = googletag
                     .sizeMapping()
-                    .addSize([0, 0], [160, 600])
+                    .addSize([768, 576], [160, 600])
+                    .addSize([0, 0], [300, 250])
                     .build();
                 sidebarSlot.defineSizeMapping(sidebarMapping);
                 googletag.pubads().enableSingleRequest();
@@ -102,7 +106,7 @@ if (!description) {
             <!-- /23167867665/dev_all_sidebar -->
             <div
                 id="div-gpt-ad-1718103576790-0"
-                style="min-width: 160px; min-height: 600px;"
+                style="min-width: 160px; min-height: 250px;"
                 class="ads"
             >
             </div>
