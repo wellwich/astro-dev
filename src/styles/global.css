@@ -351,6 +351,6 @@
     margin: 0.25rem;
 }
 
-.ads {
-    text-align: -webkit-center;
+.ads iframe {
+    margin: 0 auto;
 }
