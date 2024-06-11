@@ -21,6 +21,7 @@ const { Content } = await post.render();
 ---
 
 <BlogLayout title={post.data.title} description={post.data.description}>
+    <div class="overlay" id="overlay"></div>
     <div class="markdown">
         <BlogMeta
             title={post.data.title}
@@ -29,4 +30,32 @@ const { Content } = await post.render();
         />
         <Content />
     </div>
+    <script is:inline>
+        document.addEventListener("DOMContentLoaded", function () {
+            const images = document.querySelectorAll(".markdown img");
+            const overlay = document.getElementById("overlay");
+
+            if (overlay) {
+                images.forEach((image) => {
+                    image.addEventListener("click", () => {
+                        if (image.classList.contains("zoomed")) {
+                            image.classList.remove("zoomed");
+                            overlay.classList.remove("active");
+                        } else {
+                            image.classList.add("zoomed");
+                            overlay.classList.add("active");
+                        }
+                    });
+                });
+
+                overlay.addEventListener("click", () => {
+                    const zoomedImage = document.querySelector(".zoomed");
+                    if (zoomedImage) {
+                        zoomedImage.classList.remove("zoomed");
+                        overlay.classList.remove("active");
+                    }
+                });
+            }
+        });
+    </script>
 </BlogLayout>
