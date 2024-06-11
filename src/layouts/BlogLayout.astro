@@ -75,7 +75,13 @@ if (!description) {
                     .addService(googletag.pubads());
                 const sidebarMapping = googletag
                     .sizeMapping()
-                    .addSize([768, 576], [160, 600])
+                    .addSize(
+                        [768, 576],
+                        [
+                            [160, 600],
+                            [300, 250],
+                        ],
+                    )
                     .addSize([0, 0], [300, 250])
                     .build();
                 sidebarSlot.defineSizeMapping(sidebarMapping);
