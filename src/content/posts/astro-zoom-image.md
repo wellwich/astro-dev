@@ -13,8 +13,6 @@ tags: ["Astro","Astro Tips"]
 
 ```astro
 ---
-import { getCollection, type CollectionEntry } from "astro:content";
-import BlogLayout from "../../layouts/BlogLayout.astro";
 ---
 <Layout>
     <div class="overlay" id="overlay"></div>
