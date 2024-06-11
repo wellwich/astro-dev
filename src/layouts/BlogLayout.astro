@@ -25,27 +25,6 @@ if (!description) {
         <meta name="description" content={description} />
         <link rel="sitemap" href="/sitemap-index.xml" />
         <link rel="icon" href="/favicon.ico?" type="image/x-icon" />
-        <script is:inline>
-            window.googletag = window.googletag || { cmd: [] };
-        </script>
-        <script is:inline>
-            googletag.cmd.push(function () {
-                googletag
-                    .defineSlot(
-                        "/23167867665/dev_pc_article_header",
-                        [
-                            [468, 60],
-                            [728, 90],
-                        ],
-                        "div-gpt-ad-1718059060339-0",
-                    )
-                    .addService(googletag.pubads());
-                googletag.pubads().enableSingleRequest();
-                googletag.enableServices();
-
-                googletag.display("div-gpt-ad-1718059060339-0");
-            });
-        </script>
     </head>
     <body class="bg-gray-100 text-gray-900">
         <Header />
@@ -53,7 +32,14 @@ if (!description) {
         <div
             id="div-gpt-ad-1718059060339-0"
             style="min-width: 468px; min-height: 60px;"
-            class="ads mt-4"
+            class="ads pc mt-4 hidden md:block"
+        >
+        </div>
+        <!-- /23167867665/dev_sp_article_header -->
+        <div
+            id="div-gpt-ad-1718079383826-0"
+            style="min-width: 300px; min-height: 50px;"
+            class="ads sp block md:hidden"
         >
         </div>
         <div class="flex flex-col md:flex-row max-w-6xl mx-auto w-full">
