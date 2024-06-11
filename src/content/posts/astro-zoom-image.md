@@ -1,15 +1,15 @@
 ---
-title: "Astroで画像をズームする方法 - Astro Tips"
+title: "Astroで画像をズームさせる方法 - Astro Tips"
 date: "2024-06-12"
-description: "Astroで画像をズームする方法を紹介します。"
+description: "Astroで画像をズームさせる方法を紹介します。"
 tags: ["Astro","Astro Tips"]
 ---
 
-&emsp;Astroで画像をズームする方法を紹介します。
+&emsp;Astroで画像をズームさせる方法を紹介します。
 
 ## 画像のズーム
 
-&emsp;画像をズームするには、以下のようにします。
+&emsp;画像をズームさせるには、以下のようにします。
 
 ```astro
 ---
