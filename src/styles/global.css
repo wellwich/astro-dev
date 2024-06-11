@@ -350,3 +350,7 @@
 .markdown .tag li {
     margin: 0.25rem;
 }
+
+.ads iframe {
+    margin: 0 auto;
+}
