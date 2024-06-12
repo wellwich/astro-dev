@@ -39,78 +39,86 @@ if (!description) {
             window.googletag = window.googletag || { cmd: [] };
         </script>
         <script is:inline>
-            googletag.cmd.push(function () {
-                const headerSlot = googletag
-                    .defineSlot(
-                        "/23167867665/dev_all_header",
-                        [
-                            [728, 90],
-                            [320, 50],
-                            [468, 60],
-                            [970, 90],
-                        ],
-                        "div-gpt-ad-1718081104718-0",
-                    )
-                    .addService(googletag.pubads());
-                const mapping = googletag
-                    .sizeMapping()
-                    .addSize(
-                        [992, 744],
-                        [
-                            [970, 90],
-                            [728, 90],
-                        ],
-                    )
-                    .addSize([768, 576], [728, 90])
-                    .addSize(
-                        [517, 387],
-                        [
-                            [468, 60],
-                            [320, 50],
-                        ],
-                    )
-                    .addSize([0, 0], [320, 50])
-                    .build();
+            class GptHead extends HTMLElement {
+                constructor() {
+                    super();
+                    const pageType = this.dataset.pageType;
 
-                headerSlot.defineSizeMapping(mapping);
-                const sidebarSlot = googletag
-                    .defineSlot(
-                        "/23167867665/dev_all_sidebar",
-                        [
-                            [160, 600],
-                            [300, 250],
-                        ],
-                        "div-gpt-ad-1718104539392-0",
-                    )
-                    .addService(googletag.pubads());
-                const sidebarMapping = googletag
-                    .sizeMapping()
-                    .addSize(
-                        [768, 576],
-                        [
-                            [160, 600],
-                            [300, 250],
-                        ],
-                    )
-                    .addSize([0, 0], [300, 250])
-                    .build();
-                sidebarSlot.defineSizeMapping(sidebarMapping);
-                const infeedSlot = googletag
-                    .defineSlot(
-                        "/23167867665/dev_infeed",
-                        ["fluid"],
-                        "div-gpt-ad-1718168938559-0",
-                    )
-                    .addService(googletag.pubads());
-                googletag.pubads().enableSingleRequest();
-                googletag.enableServices();
+                    googletag.cmd.push(function () {
+                        const headerSlot = googletag
+                            .defineSlot(
+                                "/23167867665/dev_all_header",
+                                [
+                                    [728, 90],
+                                    [320, 50],
+                                    [468, 60],
+                                    [970, 90],
+                                ],
+                                "div-gpt-ad-1718081104718-0",
+                            )
+                            .addService(googletag.pubads());
+                        const mapping = googletag
+                            .sizeMapping()
+                            .addSize(
+                                [992, 744],
+                                [
+                                    [970, 90],
+                                    [728, 90],
+                                ],
+                            )
+                            .addSize([768, 576], [728, 90])
+                            .addSize(
+                                [517, 387],
+                                [
+                                    [468, 60],
+                                    [320, 50],
+                                ],
+                            )
+                            .addSize([0, 0], [320, 50])
+                            .build();
 
-                googletag.display("div-gpt-ad-1718081104718-0");
-                googletag.display("div-gpt-ad-1718104539392-0");
-                if (pageType === "list") {
-                    googletag.display("div-gpt-ad-1718168938559-0");
+                        headerSlot.defineSizeMapping(mapping);
+                        const sidebarSlot = googletag
+                            .defineSlot(
+                                "/23167867665/dev_all_sidebar",
+                                [
+                                    [160, 600],
+                                    [300, 250],
+                                ],
+                                "div-gpt-ad-1718104539392-0",
+                            )
+                            .addService(googletag.pubads());
+                        const sidebarMapping = googletag
+                            .sizeMapping()
+                            .addSize(
+                                [768, 576],
+                                [
+                                    [160, 600],
+                                    [300, 250],
+                                ],
+                            )
+                            .addSize([0, 0], [300, 250])
+                            .build();
+                        sidebarSlot.defineSizeMapping(sidebarMapping);
+                        const infeedSlot = googletag
+                            .defineSlot(
+                                "/23167867665/dev_infeed",
+                                ["fluid"],
+                                "div-gpt-ad-1718168938559-0",
+                            )
+                            .addService(googletag.pubads());
+                        googletag.pubads().enableSingleRequest();
+                        googletag.enableServices();
+
+                        googletag.display("div-gpt-ad-1718081104718-0");
+                        googletag.display("div-gpt-ad-1718104539392-0");
+                        if (pageType === "list") {
+                            googletag.display("div-gpt-ad-1718168938559-0");
+                        }
+                    });
                 }
-            });
+            }
+            customElements.define("gpt-head", GptHead);
         </script>
     </head>
     <body class="bg-gray-100 text-gray-900">
