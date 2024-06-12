@@ -8,9 +8,10 @@ interface Props {
     // 一覧ページor記事詳細ページを表す文字列
     pageType: "list" | "detail";
     // ページのタイトル
-    title: string;
+    title: string | undefined;
     // ページのディスクリプション
-    description: string;
+    // 何も指定しない場合はデフォルトのディスクリプションが使われる
+    description: string | undefined;
 }
 
 var { title, description, pageType } = Astro.props;

@@ -47,7 +47,11 @@ if (page.url.current === "/tags/" + tag) {
 }
 ---
 
-<BlogLayout title={tag}>
+<BlogLayout
+    pageType="list"
+    title={tag}
+    description={`#${tag}に関する記事の一覧です。`}
+>
     <h1 class="text-2xl font-bold mb-4">
         #{tag}　に関する記事 - {currentPageNumber}ページ目
     </h1>
@@ -61,7 +65,7 @@ if (page.url.current === "/tags/" + tag) {
                     description={post.data.description}
                     tags={post.data.tags}
                 />
-                {index === 2 && <div id="div-gpt-ad-1718168938559-0"></div>}
+                {index === 2 && <div id="div-gpt-ad-1718168938559-0" />}
             </>
         ))
     }
