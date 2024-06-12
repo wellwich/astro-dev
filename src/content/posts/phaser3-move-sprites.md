@@ -25,7 +25,7 @@ class MyScene extends Phaser.Scene {
     }
 }
 ```
-　アクセス修飾子やプロパティの後ろの！の詳細は[Phaser3をTypeScriptで使用する際の問題点と解決方法](https://dev.wellwich.com/docs/phaser3/tips/typescript/)を参照してください。
+　アクセス修飾子やプロパティの後ろの！の詳細は[Phaser3をTypeScriptで使用する際の問題点と解決方法](/blog/phaser3-typescript)
 
 ## スプライトを移動させる（元画像なし）
 　元画像なしでスプライトを移動させる方法は以下の通りです。
@@ -50,4 +50,4 @@ class MyScene extends Phaser.Scene {
         }
     }
 ```
-　詳細は[元画像なしでスプライトを生成する](https://dev.wellwich.com/docs/phaser3/tips/sprites-from-graphics/)を参照してください。
+　詳細は[元画像なしでスプライトを生成する](/sprites-from-graphics/)を参照してください。
