@@ -50,4 +50,4 @@ class MyScene extends Phaser.Scene {
         }
     }
 ```
-　詳細は[元画像なしでスプライトを生成する](/sprites-from-graphics/)を参照してください。
+　詳細は[元画像なしでスプライトを生成する](/blog/sprites-from-graphics/)を参照してください。
