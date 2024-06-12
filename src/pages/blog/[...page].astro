@@ -29,7 +29,7 @@ const currentPageNumber = parseInt(page.url.current.match(/\d+/)?.[0] ?? "1");
         記事一覧 - {currentPageNumber}ページ目
     </h1>
     {
-        page.data.map((post, index) => (
+        page.data.map((post) => (
             <>
                 <BlogPost
                     slug={post.slug}
