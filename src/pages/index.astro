@@ -13,14 +13,24 @@ const latestPosts = sortedPosts.slice(0, 5);
     <h1 class="text-2xl font-bold mb-4">最新記事</h1>
     <ul>
         {
-            latestPosts.map((post) => (
-                <BlogPost
-                    title={post.data.title}
-                    date={post.data.date}
-                    description={post.data.description}
-                    slug={post.slug}
-                    tags={post.data.tags}
-                />
+            latestPosts.map((post, index) => (
+                <>
+                    <BlogPost
+                        title={post.data.title}
+                        date={post.data.date}
+                        description={post.data.description}
+                        slug={post.slug}
+                        tags={post.data.tags}
+                    />
+
+                    {index === 2 && (
+                        <div>
+                            <script is:inline>
+                                googletag.display('div-gpt-ad-1718167284794-0');
+                            </script>
+                        </div>
+                    )}
+                </>
             ))
         }
     </ul>
