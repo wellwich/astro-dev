@@ -5,8 +5,6 @@ import Sidebar from "../components/Sidebar.astro";
 import "../styles/global.css";
 
 interface Props {
-    // 一覧ページor記事詳細ページを表す文字列
-    pageType: "list" | "detail";
     // ページのタイトル
     title: string | undefined;
     // ページのディスクリプション
@@ -14,7 +12,7 @@ interface Props {
     description: string | undefined;
 }
 
-var { title, description, pageType } = Astro.props;
+var { title, description } = Astro.props;
 if (!title) {
     title = "dev.wellwich.com";
 } else {
@@ -95,21 +93,11 @@ if (!description) {
                     .addSize([0, 0], [300, 250])
                     .build();
                 sidebarSlot.defineSizeMapping(sidebarMapping);
-                const infeedSlot = googletag
-                    .defineSlot(
-                        "/23167867665/dev_infeed",
-                        ["fluid"],
-                        "div-gpt-ad-1718168938559-0",
-                    )
-                    .addService(googletag.pubads());
                 googletag.pubads().enableSingleRequest();
                 googletag.enableServices();
 
                 googletag.display("div-gpt-ad-1718081104718-0");
                 googletag.display("div-gpt-ad-1718104539392-0");
-                if (pageType === "list") {
-                    googletag.display("div-gpt-ad-1718168938559-0");
-                }
             });
         </script>
     </head>
