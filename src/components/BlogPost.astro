@@ -1,9 +1,16 @@
 ---
-import type { BlogPostType } from "../blog";
 import TagList from "./TagList.astro";
 import Time from "./Time.astro";
 
-const { title, date, description, slug, tags } = Astro.props as BlogPostType;
+interface BlogPostProps {
+    title: string;
+    date: string;
+    description: string;
+    slug: string;
+    tags: string[];
+}
+
+const { title, date, description, slug, tags } = Astro.props as BlogPostProps;
 ---
 
 <div class="mb-8 p-4 border rounded-lg">

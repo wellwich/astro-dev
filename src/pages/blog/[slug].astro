@@ -2,6 +2,10 @@
 import { getCollection, type CollectionEntry } from "astro:content";
 import BlogLayout from "../../layouts/BlogLayout.astro";
 import BlogMeta from "../../components/BlogMeta.astro";
+import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc";
+
+dayjs.extend(utc);
 
 export async function getStaticPaths({}) {
     const posts = await getCollection("posts");
@@ -17,7 +21,11 @@ interface Props {
     post: CollectionEntry<"posts">;
 }
 const { post } = Astro.props;
-const { Content } = await post.render();
+const { Content, remarkPluginFrontmatter } = await post.render();
+
+const lastModified = dayjs(remarkPluginFrontmatter.lastModified)
+    .utc()
+    .format("HH:mm:ss DD MMMM YYYY UTC");
 ---
 
 <BlogLayout title={post.data.title} description={post.data.description}>
@@ -27,6 +35,7 @@ const { Content } = await post.render();
             title={post.data.title}
             date={post.data.date}
             tags={post.data.tags}
+            lastModified={lastModified}
         />
         <Content />
     </div>

@@ -1,13 +1,21 @@
 ---
-import type { BlogPostType } from "../blog";
 import TagList from "./TagList.astro";
 import Time from "./Time.astro";
+import LastModified from "./LastModified.astro";
 
-const { title, date, tags } = Astro.props as BlogPostType;
+interface BlogPostProps {
+    title: string;
+    date: string;
+    tags: string[];
+    lastModified: string;
+}
+
+var { title, date, tags, lastModified } = Astro.props as BlogPostProps;
 ---
 
 <article>
     <h1>{title}</h1>
     <Time date={date} />
+    <LastModified lastModified={lastModified} />
     <TagList tags={tags} />
 </article>

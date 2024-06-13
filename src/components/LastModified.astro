@@ -1,0 +1,16 @@
+---
+interface BlogPostProps {
+    lastModified: string;
+}
+const { lastModified } = Astro.props as BlogPostProps;
+import dayjs from "dayjs";
+const formattedDate = dayjs(lastModified).format("YYYY-MM-DD");
+---
+
+<>
+    <span
+        ><time class="block text-gray-600 mb-2" datetime={lastModified}
+            >更新日時：{formattedDate}</time
+        ></span
+    >
+</>

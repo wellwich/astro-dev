@@ -1,7 +1,12 @@
 ---
-import type { BlogPostType } from "../blog";
+interface BlogPostProps {
+    title: string;
+    date: string;
+    slug: string;
+    tags: string[];
+}
 
-const { tags } = Astro.props as BlogPostType;
+const { tags } = Astro.props as BlogPostProps;
 // tagsをソート
 tags.sort((a, b) => a.localeCompare(b));
 ---

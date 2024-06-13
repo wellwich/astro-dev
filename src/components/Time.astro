@@ -1,6 +1,8 @@
 ---
-import type { BlogPostType } from "../blog";
-const { date } = Astro.props as BlogPostType;
+interface BlogPostProps {
+    date: string;
+}
+const { date } = Astro.props as BlogPostProps;
 ---
 
-<time class="block text-gray-600 mb-2">{date}</time>
+<span class="block text-gray-600 mb-2">投稿日時：{date}</span>
