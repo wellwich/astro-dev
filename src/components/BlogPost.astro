@@ -15,7 +15,7 @@ const { title, date, description, slug, tags } = Astro.props as BlogPostProps;
 
 <div class="mb-8 p-4 border rounded-lg">
     <h2 class="text-2xl font-bold"><a href={`/blog/${slug}`}>{title}</a></h2>
-    <Time date={date} />
+    <Time date={date} pageType="list" />
     <p>{description}</p>
     <TagList tags={tags} />
     <a href={`/blog/${slug}`} class="text-blue-600 hover:underline flex">

@@ -1,8 +1,11 @@
 ---
 interface BlogPostProps {
     date: string;
+    pageType: "list" | "detail";
 }
-const { date } = Astro.props as BlogPostProps;
+const { date, pageType } = Astro.props as BlogPostProps;
 ---
 
-<span class="block text-gray-600 mb-2">📝{date}</span>
+<span class="block text-gray-600 mb-2"
+    >{pageType == "detail" && "投稿："}{date}</span
+>

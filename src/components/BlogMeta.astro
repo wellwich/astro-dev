@@ -15,7 +15,7 @@ var { title, date, tags, lastModified } = Astro.props as BlogPostProps;
 
 <article>
     <h1>{title}</h1>
-    <Time date={date} />
+    <Time date={date} pageType="detail" />
     <LastModified lastModified={lastModified} />
     <TagList tags={tags} />
 </article>
