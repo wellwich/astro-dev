@@ -4,8 +4,6 @@ date: "2024-06-01"
 description: "Phaser3でテキストを1文字ずつ表示させる方法を紹介します。"
 tags: ["Phaser3","Phaser3 Utils"]
 ---
-# テキストを1文字ずつ表示させる
-
 ![テキストを1文字ずつ表示させる](https://r2dev.wellwich.com/images/display-text-by-char.webp)
 ノベルゲームのようにテキストを1文字ずつ表示させるための関数を紹介します。
 
