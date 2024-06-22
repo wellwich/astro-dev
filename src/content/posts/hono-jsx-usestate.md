@@ -1,6 +1,6 @@
 ---
 title: "HonoXでuseStateを使う方法"
-date: "2024-06-10"
+date: "2024-06-22"
 description: "HonoXでuseStateを使う方法を紹介します。また、event.target.valueを使ってinput要素の値を取得する方法も紹介します。"
 tags: ["HonoX","Hono"]
 ---
