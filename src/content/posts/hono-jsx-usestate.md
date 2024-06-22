@@ -28,13 +28,16 @@ const Counter = () => {
     </div>
   );
 };
+export default Counter;
 ```
 
 &emsp;この例では、useStateフックを使ってcountとsetCountを定義しています。countは状態の値、setCountは状態を更新するための関数です。increment関数を使ってcountの値を更新し、ボタンがクリックされたときにincrement関数が呼び出されるようにしています。
 
-&emsp;では次に、HonoXでevent.target.valueを使ってinput要素の値を取得する方法を紹介します。
+&emsp;このtsxファイルは必ずislandのディレクトリに配置してください。また、このtsxファイルはroutesディレクトリにあるtsxファイルからimportしてください。
 
 ## input要素の値を取得する方法
+
+&emsp;では次に、HonoXでevent.target.valueを使ってinput要素の値を取得する方法を紹介します。
 
 &emsp;input要素の値を取得するには、event.target.valueを使います。以下のように使うことができます。
 
