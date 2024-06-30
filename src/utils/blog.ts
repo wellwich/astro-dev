@@ -1,10 +1,10 @@
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 
-export type Collections = CollectionEntry<"posts">[];
+export type Collections = CollectionEntry<"blog">[];
 
 export async function getBlogs() {
-    const posts = await getCollection("posts");
+    const posts = await getCollection("blog");
 
     return sortByDate(posts);
 }

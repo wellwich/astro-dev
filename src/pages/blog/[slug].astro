@@ -8,7 +8,7 @@ import utc from "dayjs/plugin/utc";
 dayjs.extend(utc);
 
 export async function getStaticPaths({}) {
-    const posts = await getCollection("posts");
+    const posts = await getCollection("blog");
     return posts.map((post) => ({
         params: { slug: post.slug },
         props: { post },
@@ -18,7 +18,7 @@ export async function getStaticPaths({}) {
 export const prerender = true;
 
 interface Props {
-    post: CollectionEntry<"posts">;
+    post: CollectionEntry<"blog">;
 }
 const { post } = Astro.props;
 const { Content, remarkPluginFrontmatter } = await post.render();

@@ -32,7 +32,7 @@ const { tag } = Astro.params;
 export const prerender = true;
 
 const { page } = Astro.props as {
-    page: Page<CollectionEntry<"posts">>;
+    page: Page<CollectionEntry<"blog">>;
 };
 page.data.sort((a, b) =>
     new Date(a.data.date) > new Date(b.data.date) ? -1 : 1,
