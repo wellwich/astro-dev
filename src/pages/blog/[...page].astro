@@ -21,10 +21,7 @@ page.data.sort((a, b) =>
 const currentPageNumber = parseInt(page.url.current.match(/\d+/)?.[0] ?? "1");
 ---
 
-<BlogLayout
-    title={"記事一覧 - " + { currentPageNumber } + "ページ目"}
-    description="このページは、記事一覧ページです。"
->
+<BlogLayout title={"記事一覧"} description="このページは、記事一覧ページです。">
     <h1 class="text-2xl font-bold mb-4">
         記事一覧 - {currentPageNumber}ページ目
     </h1>
